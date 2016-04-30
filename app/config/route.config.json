@@ -1,4 +1,14 @@
 {
   "routes": [
+    {
+      "route": "/v1/film/:id",
+      "method": "GET",
+      "controller": "../controllers/v1/films/film-controller"
+    },
+    {
+      "route": "/v1/films",
+      "method": "GET",
+      "controller": "../controllers/v1/films/films-controller"
+    }
   ]
 }

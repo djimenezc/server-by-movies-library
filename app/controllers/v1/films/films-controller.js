@@ -5,10 +5,10 @@ function FilmsController() {
 function get(req, res, next) {
 
   var nPage = parseInt(req.query.page),
-      n = parseInt(req.query.records),
+      pageSize = parseInt(req.query.records),
       films = [];
 
-      for(var id = 0;  id < n; id++) {
+      for(var id = nPage * pageSize;  id < (nPage * pageSize) + pageSize; id++) {
 
         films.push({
           'id': parseInt(id),
@@ -18,6 +18,8 @@ function get(req, res, next) {
           'genre': 'terror'
         });
       }
+
+  console.log('returning films to id: ' + id);
 
   res.status(200).json(films);
 }

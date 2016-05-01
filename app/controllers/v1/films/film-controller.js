@@ -14,6 +14,8 @@ function get(req, res, next) {
             'genre': 'terror'
         };
 
+    console.log('returning film: ' + id);
+
     res.status(200).json(film);
 }
 
